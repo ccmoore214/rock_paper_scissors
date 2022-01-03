@@ -9,6 +9,25 @@
 <body>
     <script>
 
+        function computerPlay() {
+            let computerChoice = Math.floor((Math.random() * 3) + 1);
+            switch (computerChoice) {
+                case 1:
+                    return "rock";
+                    break;
+                case 2:
+                    return "paper";
+                    break;
+                case 3: 
+                    return "scissors";
+                    break;
+                default:
+                    return "Something went wrong. . . .";
+            }
+        }
+
+        
+        
     </script>
 </body>
 </html>
