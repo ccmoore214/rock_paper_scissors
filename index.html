@@ -25,10 +25,12 @@
                     return "Something went wrong. . . .";
             }
         }
-        
+
         function playRound(playerSelection, computerSelection) {
-            let player playerSelection = window.prompt("Select Rock, Paper, or Scissors:");
-            player = playerSelection.toLowerCase();
+            
+            let player = playerSelection.toLowerCase();
+
+            
             if (player === computerSelection) {
                 return "player";
             } else if (player === "rock" && computerSelection === "paper") {
@@ -52,20 +54,27 @@
            let playerScore = 0;
            let computerScore = 0;
            let round = 0;
+           
+           
            while (round < 5) {
-            playRound(playerSelection, computerPlay()); 
-            if (playRound() === "player") {
+            playerSelection = window.prompt("Select Rock, Paper, or Scissors:", "");
+            if ((playRound(playerSelection, computerPlay())) === "player") {
                 playerScore++;
-            } else if (playRound() === "computer") {
-                computerScore++;
             } else {
-                return "Something went wrong";
+                computerScore++;
             }
             round++;
            }
+            
+          if (playerScore > computerScore) {
+              console.log("Player score is " + playerScore + " and the Computer score is " + computerScore + ". Congratulations you won!");
+          } else {
+              console.log("Player score is " + playerScore + " and the Computer score is " + computerScore + ". Better luck next time!");
+          }
+          
         }
 
-        game();
+        game()
 
     </script>
 </body>
